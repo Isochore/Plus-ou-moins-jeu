@@ -1,0 +1,47 @@
+html, body, #section_jeu {
+    height: 100%;
+    /* background-image: url("lagaf.png"); */
+}
+
+#section_jeu {
+    /* background-color: rgb(27, 27, 27); */
+    /* background-image: url("lagafz.png"); */
+    background-image: url("numbers.jpg");
+    color: white;
+}
+
+#section_jeu .container {
+    /* background-color: rgba(46, 46, 51, 0.5); */
+    background-color: rgba(26, 26, 29, 0.9);
+    /* height: 50%; */
+    border-radius: 20px;
+}
+
+.content {
+    /* height: 50%; */
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+#info {
+    text-align: center;
+}
+
+#lagaf {
+    position: absolute;
+    right: 200px;
+    bottom: 0;
+    transform: translate(0, 470px);
+    overflow: hidden;
+}
+
+@media (max-width: 575px) { 
+
+.win img {
+    width: 250px;
+}
+
+}
