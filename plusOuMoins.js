@@ -25,8 +25,7 @@
     var divMoins = document.querySelector("#repMoins");
 
     var newRepMoins
-    
-    console.log(number);
+
 
  btn.addEventListener("click", (event) => {
      event.preventDefault;
@@ -69,7 +68,6 @@
       } 
      rep.value = "";
      rep.focus();
-     console.log(i);
  })
 
 rep.addEventListener("keydown", (event) => {
@@ -113,7 +111,6 @@ rep.addEventListener("keydown", (event) => {
          }
         rep.value = "";
         rep.focus();
-        console.log(i);
     }
 });
 
@@ -146,7 +143,7 @@ reset.addEventListener ("click", (event) => {
     for (let i = 0; i < pNode.length; i++) {
         pNode[i].remove();
     }
-    console.log(number);
+    rep.focus();
     } else {
         titre.innerHTML = "Bienvenue au jeu du plus ou moins !";
         coups.innerHTML = "Coups restants : 10";
@@ -160,6 +157,5 @@ reset.addEventListener ("click", (event) => {
         for (let i = 0; i < pNode.length; i++) {
             pNode[i].remove();
         }
-        console.log(number);
     }
 })
