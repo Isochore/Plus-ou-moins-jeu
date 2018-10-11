@@ -8,6 +8,7 @@ html, body, #section_jeu {
     /* background-image: url("lagafz.png"); */
     background-image: url("numbers.jpg");
     color: white;
+    height: 100vh;
 }
 
 #section_jeu .container {
@@ -38,10 +39,38 @@ h1 {
     overflow: hidden;
 }
 
+#right, #left {
+    width: 20%;
+}
+
+#milieu {
+    width: 60%;
+}
+
+#right span, #left span {
+    font-size: 4em;
+}
+
 @media (max-width: 575px) { 
 
 .win img {
-    width: 250px;
+    transform: scale(0.5, 0.5);
+}
+
+.win {
+    height: 100%;
+}
+
+#right, #left {
+    width: 20%;
+}
+
+#milieu {
+    width: 60%;
+}
+
+h1 {
+    font-size: 1.5em;
 }
 
 }

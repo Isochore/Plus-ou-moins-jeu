@@ -1,17 +1,3 @@
-// // alert("test");
-
-// let titre = document.getElementById("titre");
-// const btn = document.querySelector("#btn");
-
-// btn.addEventListener("click" , (event) => {
-//     // alert(titre.style.fontSize);
-//     if (titre.style.fontSize == "2.5em") {
-//         titre.style.fontSize = "10em";
-//         console.log(titre.innerHTML);
-//     } else {
-//         titre.style.fontSize = "2.5em";
-//     }
-// })
 
     const titre = document.querySelector("#titre");
     const rep = document.querySelector("#reponse");
@@ -33,6 +19,12 @@
     newImg2.className = "winImg";
     newImg2.style.marginTop = "50px";
     var currentDiv = document.querySelector(".win");
+
+    // var newRep = document.createElement("p");
+    var divPlus = document.querySelector("#repPlus");
+    var divMoins = document.querySelector("#repMoins");
+
+    var newRepMoins
     
     console.log(number);
 
@@ -43,18 +35,25 @@
          i++;
          reste--;
          coups.innerHTML = "Coups restants : " + reste;
+         let newRep = document.createElement("p");
+         newRep.innerHTML = rep.value;
+         newRep.className = "num";
+         divMoins.appendChild(newRep);
      } else if (rep.value < number && rep.value > 0 && i != 9 && Number.isInteger(parseFloat(rep.value))) {
          titre.innerHTML = "C'est plus !";
          i++;
          reste--;
          coups.innerHTML = "Coups restants : " + reste;
+         let newRep = document.createElement("p");
+         newRep.innerHTML = rep.value;
+         newRep.className = "num";
+         divPlus.appendChild(newRep);
      } else if (rep.value == number || (i == 9 && rep.value == number)) {
         titre.innerHTML = "Vous avez trouvé, bravo !";
         reste--;
         coups.innerHTML = "Coups restants : " + reste;
         rep.disabled = "true";
         btn.disabled = "true";
-        document.querySelector("#lagaf").style.transform = "translate(0, 0)";
 
         currentDiv.appendChild(newImg);
 
@@ -81,11 +80,19 @@ rep.addEventListener("keydown", (event) => {
             i++;
             reste--;
             coups.innerHTML = "Coups restants : " + reste;
+            let newRep = document.createElement("p");
+            newRep.innerHTML = rep.value;
+            newRep.className = "num";
+            divMoins.appendChild(newRep);
         } else if (rep.value < number && rep.value > 0 && i != 9 && Number.isInteger(parseFloat(rep.value))) {
             titre.innerHTML = "C'est plus !";
             i++;
             reste--;
             coups.innerHTML = "Coups restants : " + reste;
+            let newRep = document.createElement("p");
+            newRep.innerHTML = rep.value;
+            newRep.className = "num";
+            divPlus.appendChild(newRep);
         } else if (rep.value == number) {
            titre.innerHTML = "Vous avez trouvé, bravo !";
            reste--;
@@ -124,6 +131,7 @@ function verif (event) {
 
 reset.addEventListener ("click", (event) => {
     event.preventDefault();
+    if (document.querySelector(".winImg") != null) {
     let imgNode = document.querySelector(".winImg");
     imgNode.remove();
     titre.innerHTML = "Bienvenue au jeu du plus ou moins !";
@@ -134,5 +142,24 @@ reset.addEventListener ("click", (event) => {
     number = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
     i = 0;
     reste = 10;
+    let pNode = document.querySelectorAll(".num");
+    for (let i = 0; i < pNode.length; i++) {
+        pNode[i].remove();
+    }
     console.log(number);
+    } else {
+        titre.innerHTML = "Bienvenue au jeu du plus ou moins !";
+        coups.innerHTML = "Coups restants : 10";
+        btn.disabled = "";
+        rep.disabled = "";
+        rep.value = "";
+        number = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
+        i = 0;
+        reste = 10;
+        let pNode = document.querySelectorAll(".num");
+        for (let i = 0; i < pNode.length; i++) {
+            pNode[i].remove();
+        }
+        console.log(number);
+    }
 })
