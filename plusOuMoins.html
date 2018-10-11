@@ -25,7 +25,7 @@
                 <div class="content d-flex justify-content-center align-items-center flex-column">
                     <h1 id="titre">Bienvenue au jeu du plus ou moins !</h1>
                     <p id="info">Entrez un nombre entre 0 et 100 (0 et 100 exclus)</p>
-                    <input type="text" class="pl-2" id="reponse" autocomplete="off" autofocus onkeypress="verif(event); return false;">
+                    <input type="text" class="pl-2" id="reponse" autocomplete="off" onpaste="return false;" autofocus onkeypress="verif(event); return false;">
                     <p id="coups">Coups restants : 10</p>
                     <div class="btn-field">
                         <button class="btn btn-primary mt-4" id="btn" type="button">Valider</button>
